@@ -1,0 +1,15 @@
+<h1>Result</h1>
+<p>Your word is: <%= @user_word %></p>
+<% if @result == 'illegal letter' %>
+  <p>Sorry but <strong><%= @user_word %></strong> can't be built out of <%= @letters %></p>
+<% elsif @result == 'not English word' %>
+  <p>Sorry but <strong><%= @user_word %></strong> does not seem to be a valid English word...</p>
+<% else %>
+  <p><strong>Congratulations!</strong> <%= @user_word %> is a valid English word!</p>
+  <p>Score: <%= @user_score %></p>
+<% end %>
+
+<p>Cumulated score: <%= @cumulated_score %></p>
+
+<%= link_to 'Play again', new_path %>
+<%= link_to 'Reset cumulated score', reset_path %>
